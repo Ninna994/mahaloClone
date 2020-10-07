@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 * {
     margin: 0;
     padding: 0;
@@ -5,5 +8,181 @@
 }
 
 html {
-    font-size: 10px;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.7;
+    position: relative;
+
+}
+
+.section {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    position: relative;
+    padding: 11rem 0;
+
+    &:before {
+        content: '';
+        background: $shadow;
+        position: absolute;
+        top: 0;
+        width: 40%;
+        height: 100%;
+        z-index: 1;
+        overflow-x: hidden;
+    }
+
+    &.section-seo {
+        background-color: $seo-bg;
+
+        &::before {
+            left: 0;
+        }
+    }
+
+    &.section-ppc {
+        background-color: $ppc-bg;
+
+        &::before {
+            left: 0;
+        }
+    }
+
+    &.section-seo {
+        background-color: $seo-bg;
+
+        &::before {
+            left: 0;
+        }
+    }
+
+    .section-header {
+        .sticky-top {
+            top: 20rem;
+        }
+
+        h2 {
+            font-size: 6rem;
+        }
+
+        .section-header--description {
+            font-size: 2.5rem;
+        }
+    }
+
+    .section-content {
+
+        &.section-content--right {
+            padding-left: 10rem;
+        }
+
+        h3 {
+            font-size: 3rem;
+            padding-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+    }
+
+    .section-details {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 4.5rem;
+
+        .section-details--info {
+            flex-basis: 20%;
+        }
+
+        .section-details--text {
+            flex-basis: 80%;
+            margin-left: 5rem;
+
+            h4 {
+                font-size: 2rem;
+                font-weight: 500;
+            }
+
+        }
+
+    }
+}
+
+// common styles
+
+.text-regular {
+    font-size: 1.6rem;
+}
+
+.of-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-text {
+
+    font-size: 1.9rem;
+    font-weight: 300;
+
+    ul {
+        padding-left: 3.5rem;
+
+    }
+}
+
+// navigation
+.nav-container {
+    position: relative;
+
+}
+
+#header {
+    padding: 2rem 10%;
+    width: 100%;
+    font-family: "Titillium Web", sans-serif;
+    background-color: $header-bg;
+
+    .nav-item {
+        font-size: 1.8rem;
+        margin-right: 2rem;
+
+        .nav-link {
+            color: #fff;
+            padding: 1rem;
+            @include transition(color .2s ease-in-out);
+        }
+
+        &.active,
+        &:hover {
+            .nav-link {
+                color: $cyan;
+            }
+        }
+
+        &.active {
+            .nav-link {
+                border-bottom: 3px solid $cyan;
+            }
+        }
+    }
+}
+
+#hero {
+    background-image: $hero-bg;
+    font-family: "Titillium Web", sans-serif;
+
+    .hero-lead {
+        font-size: 2.6rem;
+        font-weight: 600;
+    }
+
+    .hero-regular {
+        font-size: 1.8rem;
+    }
 }

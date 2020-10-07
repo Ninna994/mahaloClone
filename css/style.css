@@ -5,6 +5,163 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.7;
+  position: relative;
+}
+
+.section {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  position: relative;
+  padding: 11rem 0;
+}
+
+.section:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.section.section-seo {
+  background-color: #1d8190;
+}
+
+.section.section-seo::before {
+  left: 0;
+}
+
+.section.section-ppc {
+  background-color: #5067c1;
+}
+
+.section.section-ppc::before {
+  left: 0;
+}
+
+.section.section-seo {
+  background-color: #1d8190;
+}
+
+.section.section-seo::before {
+  left: 0;
+}
+
+.section .section-header .sticky-top {
+  top: 20rem;
+}
+
+.section .section-header h2 {
+  font-size: 6rem;
+}
+
+.section .section-header .section-header--description {
+  font-size: 2.5rem;
+}
+
+.section .section-content.section-content--right {
+  padding-left: 10rem;
+}
+
+.section .section-content h3 {
+  font-size: 3rem;
+  padding-bottom: 3rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.section .section-details {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 4.5rem;
+}
+
+.section .section-details .section-details--info {
+  flex-basis: 20%;
+}
+
+.section .section-details .section-details--text {
+  flex-basis: 80%;
+  margin-left: 5rem;
+}
+
+.section .section-details .section-details--text h4 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.text-regular {
+  font-size: 1.6rem;
+}
+
+.of-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.description-text {
+  font-size: 1.9rem;
+  font-weight: 300;
+}
+
+.description-text ul {
+  padding-left: 3.5rem;
+}
+
+.nav-container {
+  position: relative;
+}
+
+#header {
+  padding: 2rem 10%;
+  width: 100%;
+  font-family: "Titillium Web", sans-serif;
+  background-color: #244774;
+}
+
+#header .nav-item {
+  font-size: 1.8rem;
+  margin-right: 2rem;
+}
+
+#header .nav-item .nav-link {
+  color: #fff;
+  padding: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+#header .nav-item.active .nav-link, #header .nav-item:hover .nav-link {
+  color: #53beed;
+}
+
+#header .nav-item.active .nav-link {
+  border-bottom: 3px solid #53beed;
+}
+
+#hero {
+  background-image: linear-gradient(to bottom right, #14518d, #244774);
+  font-family: "Titillium Web", sans-serif;
+}
+
+#hero .hero-lead {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+#hero .hero-regular {
+  font-size: 1.8rem;
 }
 /*# sourceMappingURL=style.css.map */
