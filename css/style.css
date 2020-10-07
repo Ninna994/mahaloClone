@@ -43,19 +43,27 @@ body {
   left: 0;
 }
 
-.section.section-ppc {
-  background-color: #5067c1;
-}
-
-.section.section-ppc::before {
-  left: 0;
-}
-
 .section.section-seo {
   background-color: #1d8190;
 }
 
 .section.section-seo::before {
+  left: 0;
+}
+
+.section.section-about {
+  background-color: #6ba4d7;
+}
+
+.section.section-about::before {
+  right: 0;
+}
+
+.section.section-team {
+  background-color: #ff1e5e;
+}
+
+.section.section-team::before {
   left: 0;
 }
 
@@ -71,8 +79,16 @@ body {
   font-size: 2.5rem;
 }
 
+.section .section-header.right {
+  padding-left: 10rem;
+}
+
 .section .section-content.section-content--right {
   padding-left: 10rem;
+}
+
+.section .section-content.section-content--left {
+  padding-right: 10rem;
 }
 
 .section .section-content h3 {
@@ -97,6 +113,11 @@ body {
   margin-left: 5rem;
 }
 
+.section .section-details .section-details--text.full {
+  flex-basis: 100%;
+  margin-left: 0;
+}
+
 .section .section-details .section-details--text h4 {
   font-size: 2rem;
   font-weight: 500;
@@ -113,6 +134,7 @@ body {
 }
 
 .description-text {
+  position: relative;
   font-size: 1.9rem;
   font-weight: 300;
 }
@@ -163,5 +185,41 @@ body {
 
 #hero .hero-regular {
   font-size: 1.8rem;
+}
+
+.swiper-container {
+  height: 50rem;
+  width: 100%;
+}
+
+.person-image {
+  height: 35rem;
+  position: relative;
+}
+
+.person-image .overlay {
+  position: absolute;
+  height: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.person-image .overlay p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.person-image .overlay p.leading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.person-image:hover .overlay {
+  opacity: 1;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

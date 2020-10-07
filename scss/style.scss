@@ -46,16 +46,24 @@ body {
         }
     }
 
-    &.section-ppc {
-        background-color: $ppc-bg;
+    &.section-seo {
+        background-color: $seo-bg;
 
         &::before {
             left: 0;
         }
     }
 
-    &.section-seo {
-        background-color: $seo-bg;
+    &.section-about {
+        background-color: $about-bg;
+
+        &::before {
+            right: 0;
+        }
+    }
+
+    &.section-team {
+        background-color: $team-bg;
 
         &::before {
             left: 0;
@@ -74,12 +82,20 @@ body {
         .section-header--description {
             font-size: 2.5rem;
         }
+
+        &.right {
+            padding-left: 10rem;
+        }
     }
 
     .section-content {
 
         &.section-content--right {
             padding-left: 10rem;
+        }
+
+        &.section-content--left {
+            padding-right: 10rem;
         }
 
         h3 {
@@ -102,6 +118,11 @@ body {
         .section-details--text {
             flex-basis: 80%;
             margin-left: 5rem;
+
+            &.full {
+                flex-basis: 100%;
+                margin-left: 0;
+            }
 
             h4 {
                 font-size: 2rem;
@@ -126,7 +147,7 @@ body {
 }
 
 .description-text {
-
+    position: relative;
     font-size: 1.9rem;
     font-weight: 300;
 
@@ -184,5 +205,43 @@ body {
 
     .hero-regular {
         font-size: 1.8rem;
+    }
+}
+
+.swiper-container {
+    height: 50rem;
+    width: 100%;
+}
+
+.person-image {
+    height: 35rem;
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        height: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        @include transition(all .3s ease-in-out);
+        background-color: rgba(0, 0, 0, 0.8);
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+
+            &.leading {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &:hover {
+        .overlay {
+            opacity: 1;
+            height: 100%;
+        }
     }
 }
