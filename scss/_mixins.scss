@@ -1,0 +1,121 @@
+@mixin font-face($name, $file, $weight) {
+    @font-face {
+        font-family: "#{$name}";
+        // src: url("assets/vendor/font/#{$file}.eot");
+        src: url("/vendor/font/#{$file}.ttf") format("truetype");
+        //  url("assets/vendor/font/#{$file}.eot?#iefix")
+        // format("embedded-opentype");
+        // url("assets/vendor/font/#{$file}.woff") format("woff"),
+        font-weight: #{$weight};
+    }
+}
+
+
+@mixin breakpoint($point) {
+    @if $point==retina {
+        @media only screen and (min-width: 1921px) {
+            @content;
+        }
+    }
+
+    @else if $point==tablet {
+        @media only screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point==phone {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin title($size, $lh) {
+    font-family: "CorporateRoundedBold", sans-serif;
+    color: $blue;
+    font-size: $size;
+    line-height: $lh;
+}
+
+
+@mixin text($size, $lh) {
+    font-size: $size;
+    line-height: $lh;
+}
+
+
+// vendors
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args...) {
+    transform: $args;
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+}
+
+@mixin border-radius($args...) {
+    border-radius: $args;
+    -webkit-border-radius: $args;
+    -moz-border-radius: $args;
+    -ms-border-radius: $args;
+    -o-border-radius: $args;
+}
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
+@mixin position($position,
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+    @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+    @include position(fixed, $args...);
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {
+        @content;
+    }
+
+    :-moz-placeholder {
+        @content;
+    }
+
+    ::-moz-placeholder {
+        @content;
+    }
+
+    :-ms-input-placeholder {
+        @content;
+    }
+}
